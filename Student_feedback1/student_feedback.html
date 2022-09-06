@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Student Feedback</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/admin.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--Main Navigation-->
+    <header>
+      <!-- Sidebar -->
+      <nav id="sidebarMenu" class="d-lg-block sidebar bg-white collapse" style="">
+        <div class="position-sticky">
+          <div class="list-group list-group-flush mx-3 mt-4">
+            <a href="student_home.html" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+              <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+            </a>
+            
+            <a href="student_passupdate.html" class="list-group-item list-group-item-action py-2 ripple ripple-surface"><i class="fas fa-lock fa-fw me-3">
+               </i><span>Update Password</span>
+            </a>
+            
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple ripple-surface">
+              <i class="fas fa-chart-bar fa-fw me-3"></i><span>Feedback</span>
+            </a>
+            
+            <a href="home.html" class="list-group-item list-group-item-action py-2 ripple">
+              <i class="fas fa-building fa-fw me-3"></i><span>Log Out</span>
+            </a>
+            
+          </div>
+        </div>
+      </nav>
+      <!-- Sidebar -->
+  
+      <!-- Navbar -->
+      <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <button class="navbar-toggler collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+  
+          <!-- Brand -->
+          <a class="navbar-brand" href="#">
+            <h5 class="mb-4">Maulana Abul Kalam Azad University Of Technology</h5>
+          </a>
+  
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->
+    </header>
+    <!--Main Navigation-->
+  
+    <!--Main layout-->
+    <main style="margin-top: 58px">
+      <div class="container pt-4">
+        <!-- Section: Main chart -->
+        <section class="mb-4">
+          <div class="card">
+            <div class="card-header py-3">
+              
+  <h5 class="mb-0 text-center"><strong>Feedback Form</strong></h5>
+                        
+            </div>
+            <div class="card-body">
+              <form name="myform" method="post">
+             <div class="row g-3">
+                          <div class="col">
+                              <div class="row mb-3">
+                                  <label for="inputEmail3" class="col-sm-3 col-form-label">Choose semester:</label>
+                                  <div class="col-sm-3">
+                                    <select class="form-select" id="slct1" name="slct1" onchange="populate(this.id,'slct2')">
+                                      <option value="">Choose...</option>
+                                      <option value="1">I</option>
+                                      <option value="2">II</option>
+                                      <option value="3">III</option>
+                                      <option value="4">IV</option>
+                                      <option value="5">V</option>
+                                      <option value="6">VI</option>
+                                      <option value="7">VII</option>
+                                    </select>
+                                    </div>
+                                  </div>
+
+                                  <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-3 col-form-label">Choose Subject:</label>
+                                    <div class="col-sm-3">
+                                      <select class="form-select" id="slct2" name="slct2"></select>
+                                      </div>
+                                    </div>
+                                     <br>
+
+                                     <!--Feedback Form-->
+                                     <!--Ques-1-->
+                                     <div class="row mb-3">
+                                      <label for="inputEmail3" class="col-sm-6 col-form-label"><strong>Q:1 This course has increased my feelings of competence and confidence as a learner:- </strong></label>
+                                        <br/>
+                                        <div class="col-sm-6">
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio1"
+                                          value="option1"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio1">Strongly Agree</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio2"
+                                          value="option2"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio2">Agree</label>
+                                      </div>
+
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio2"
+                                          value="option2"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio2">Neutral</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio3"
+                                          value="option3"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio3">Disagree</label>
+                                      </div>
+                                      </div>
+                                    </div>
+
+                                      <!--Ques-2-->
+                                     <div class="row mb-3">
+                                      <label for="inputEmail3" class="col-sm-6 col-form-label"><strong>Q:2 The technology used in this course facilitated better learning of the content:- </strong></label>
+                                        <br/>
+                                        <div class="col-sm-6">
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio1"
+                                          value="option1"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio1">Strongly Agree</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio2"
+                                          value="option2"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio2">Agree</label>
+                                      </div>
+
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio2"
+                                          value="option2"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio2">Neutral</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio3"
+                                          value="option3"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio3">Disagree</label>
+                                      </div>
+                                      </div>
+                                    </div>
+
+                                     <!--Ques-3-->
+                                     <div class="row mb-3">
+                                      <label for="inputEmail3" class="col-sm-6 col-form-label"><strong>Q:3 I am satisfied with my learning of the course:- </strong></label>
+                                        <br/>
+                                        <div class="col-sm-6">
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio1"
+                                          value="option1"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio1">Strongly Agree</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio2"
+                                          value="option2"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio2">Agree</label>
+                                      </div>
+
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio2"
+                                          value="option2"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio2">Neutral</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio3"
+                                          value="option3"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio3">Disagree</label>
+                                      </div>
+                                      </div>
+                                    </div>
+
+                                    <!--Ques-4-->
+                                    <div class="row mb-3">
+                                      <label for="inputEmail3" class="col-sm-6 col-form-label"><strong>Q:4 Course activities and assignments facilitated my understanding of course content:- </strong></label>
+                                        <br/>
+                                        <div class="col-sm-6">
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio1"
+                                          value="option1"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio1">Strongly Agree</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio2"
+                                          value="option2"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio2">Agree</label>
+                                      </div>
+
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio2"
+                                          value="option2"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio2">Neutral</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio3"
+                                          value="option3"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio3">Disagree</label>
+                                      </div>
+                                      </div>
+                                    </div>
+                                      
+                                    <!--Ques-5-->
+                                    <div class="row mb-3">
+                                      <label for="inputEmail3" class="col-sm-6 col-form-label"><strong>Q:5 Internal assessment tests were aligned with course objectives:- </strong></label>
+                                        <br/>
+                                        <div class="col-sm-6">
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio1"
+                                          value="option1"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio1">Strongly Agree</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio2"
+                                          value="option2"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio2">Agree</label>
+                                      </div>
+
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio2"
+                                          value="option2"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio2">Neutral</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio3"
+                                          value="option3"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio3">Disagree</label>
+                                      </div>
+                                      </div>
+                                    </div>
+
+                                    <!--Ques-6-->
+                                    <div class="row mb-3">
+                                      <label for="inputEmail3" class="col-sm-6 col-form-label"><strong>Q:6 The level of course assignments were acceptable:-  </strong></label>
+                                        <br/>
+                                        <div class="col-sm-6">
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio1"
+                                          value="option1"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio1">Strongly Agree</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio2"
+                                          value="option2"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio2">Agree</label>
+                                      </div>
+
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio2"
+                                          value="option2"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio2">Neutral</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="inlineRadioOptions"
+                                          id="inlineRadio3"
+                                          value="option3"
+                                        />
+                                        <label class="form-check-label" for="inlineRadio3">Disagree</label>
+                                      </div>
+                                      </div>
+                                    </div>
+                                
+            
+
+                                    <br/>
+                                     <input class="btn btn-primary" type="button" name="log" value="Submit" style="margin-left:50%">
+                                      
+                          </div>
+                        </form> 
+                        </div>
+
+              </div>
+          </div>
+        </section>
+  
+      </div>
+    </main>
+    <!--Main layout-->
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript" src="js/admin.js"></script>
+  
+    <script>
+      function populate(s1,s2){
+        var s1 = document.getElementById(s1);
+        var s2 = document.getElementById(s2);
+        s2.innerHTML = "";
+        if(s1.value == "1"){
+          var optionArray = ["|","physics|Physics","maths1|Mathematics-IA","electrical|Basic Electrical"];
+        } else if(s1.value == "2"){
+          var optionArray = ["|","chemistry|Chemistry-I(A)","maths2|Mathematics-IIA","c|Programming for Problem Solving(C)"];
+        } else if(s1.value == "3"){
+          var optionArray = ["|","digital|Analog and Digital Electronics","dsa|Data Structure & Algorithm","co|Computer Organisation","maths3|Mathematics-III","eco|Economics","it|IT Workshop(Sci Lab/MATLAB/Python)"];
+        } else if(s1.value == "4"){
+          var optionArray = ["|","maths4|Discrete Mathematics","ca|Computer Architecture","automata|Formal Language & Automata Theory","dsa1|Design & Analysis Of Algorithm","bio|Biology","ev|Environmental Sciences"];
+        } else if(s1.value == "5"){
+          var optionArray = ["|","softeng|Software Engineering","cd|Compiler Design","os|Operating Systems","oop|Object Oriented Programming","indusmanage|Introduction to Industrial Management","ai|Artificial Intelligence"];
+        } else if(s1.value == "6"){
+          var optionArray = ["|","dbms|Database Management Systems","cn|Computer Networks","distrisys|Distributed Systems","datawarehouse|Data Warehousing and Data Mining","hr|Human Resource Development and Organizational Behavior"];
+        } else if(s1.value == "7"){
+          var optionArray = ["|","ml|Machine Learning","softcomp|Soft Computing","or|Operation Research","projectmanage|Project Management and Entrepreneurship"];
+        }
+
+        for(var option in optionArray){
+          var pair = optionArray[option].split("|");
+          var newOption = document.createElement("option");
+          newOption.value = pair[0];
+          newOption.innerHTML = pair[1];
+          s2.options.add(newOption);
+        }
+      }
+  </script>
+  
+  
+  
+  
+  
+
+</body>
+
+</html>
